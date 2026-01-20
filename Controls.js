@@ -53,25 +53,6 @@ function createControls()
     displayControls.enableConst = displayFolder.add(guiControls, 'enableConst').name('Constellations');
     displayControls.enableGalaxy = displayFolder.add(guiControls, 'enableGalaxy').name('Galaxy');
     displayControls.enableTampere = displayFolder.add(guiControls, 'enableTampere').name('Tampere');
-    const lonControl = displayFolder.add(guiControls, 'gridLonResolution', 1, 180, 1)
-    .name('Grid Lon. Resolution')
-    .onChange(function()
-    {
-        sphereShaders.updateGrid(guiControls.gridLonResolution, guiControls.gridLatResolution);
-    });
-    const latControl = displayFolder.add(guiControls, 'gridLatResolution', 1, 180, 1)
-    .name('Grid Lat. Resolution')
-    .onChange(function()
-    {
-        sphereShaders.updateGrid(guiControls.gridLonResolution, guiControls.gridLatResolution);
-    });
-
-    displayFolder.addColor(guiControls, 'colorGrid').name('Grid Color')
-    .onChange(function()
-    {
-        sphereShaders.colorGrid = guiControls.colorGrid;
-        sphereShaders.setColorsGrid();
-    });
 
     const cameraFolder = gui.addFolder('Camera');
 
